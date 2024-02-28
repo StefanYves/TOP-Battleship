@@ -7,7 +7,33 @@
     <title>My App</title>
   </head>
   <body>
-    <h1 class="text-4xl text-blue-700">Template</h1>
+    <div class="flex justify-around mt-24">
+      <div>
+        <p class="text-2xl">Player:</p>
+        <div id="computer-gameboard" class="flex pointer-events-none"></div>
+      </div>
+      <div>
+        <p class="text-2xl">Computer:</p>
+        <div id="player-gameboard" class="flex"></div>
+      </div>
+    </div>
+    <div
+      class="flex justify-center items-center bg-gray-400 fixed bottom-0 w-full"
+    >
+      <div class="flex justify-center items-center right-5">
+        <p class="text-xl text-white font-bold mb-2 mt-2">
+          Copyright © 2023 stefanyves
+        </p>
+        <a
+          href="https://github.com/StefanYves"
+          class="ml-3 w-8 h-8 bg-github-img bg-cover"
+        >
+          <img
+            src="data:image/png;base64,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"
+          />
+        </a>
+      </div>
+    </div>
     <script src="bundle.js"></script>
   </body>
 </html>
